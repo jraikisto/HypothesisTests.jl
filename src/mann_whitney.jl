@@ -205,7 +205,7 @@ where ``\\mathcal{T}`` is the set of the counts of tied values at each tied posi
 Implements: [`pvalue`](@ref)
 """
 function ApproximateMannWhitneyUTest(U::Real, ranks::AbstractVector{T},
-    tie_adjustment::Real, nx::Int, ny::Int, median::Float64) where T<:Real
+    tie_adjustment::Real, nx::Int, ny::Int, median::Real) where T<:Real
     mu = U - nx * ny / 2
     sigma = sqrt((nx * ny * (nx + ny + 1 - tie_adjustment /
         ((nx + ny) * (nx + ny - 1)))) / 12)
